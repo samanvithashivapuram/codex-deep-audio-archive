@@ -103,4 +103,8 @@ export const archiveEntries: ArchiveEntry[] = [
   { id: 95, title: "Wind Turbine Infrasound", description: "Below-audible frequency monitoring of large wind turbine blade rotation. Infrasound propagation distance and ground coupling effects are mapped spatially.", audioIndex: 4 },
   { id: 96, title: "Quantum Entanglement Proxy", description: "Statistical correlation measurements between spatially separated detectors sonified. The proxy audio represents coincidence counting rates as rhythmic density.", audioIndex: 5 },
   { id: 97, title: "Archive Terminus Signal", description: "Final recorded transmission in the archive sequence. The terminus signal carries metadata summarizing the complete collection and authentication checksums.", audioIndex: 0 },
+  { id: 98, title: "Archive Terminus Signal", description: "Final recorded transmission in the archive sequence. The terminus signal carries metadata summarizing the complete collection and authentication checksums.", audioIndex: 2 },
+  { id: 99, title: "Archive Terminus Signal", description: "Final recorded transmission in the archive sequence. The terminus signal carries metadata summarizing the complete collection and authentication checksums.", audioIndex: 5 },
+  { id: 100, title: "Archive Terminus Signal", description: "Final recorded transmission in the archive sequence. The terminus signal carries metadata summarizing the complete collection and authentication checksums.", audioIndex: 1 }
+
 ];
