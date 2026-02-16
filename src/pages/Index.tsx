@@ -8,7 +8,7 @@ import sound2 from "@/assets/audio/sound_3.wav";
 import sound3 from "@/assets/audio/sound_4.wav";
 import sound4 from "@/assets/audio/sound_5.wav";
 import sound5 from "@/assets/audio/sound_6.wav";
-import sound80 from "@/assets/audio/sound_80.wav";
+import sound80 from "@/assets/audio/steghide.wav";
 import sound85 from "@/assets/audio/sound_85.wav";
 import sound90 from "@/assets/audio/sound_90.wav";
 
