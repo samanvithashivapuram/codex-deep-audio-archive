@@ -8,8 +8,22 @@ import sound2 from "@/assets/audio/sound_3.wav";
 import sound3 from "@/assets/audio/sound_4.wav";
 import sound4 from "@/assets/audio/sound_5.wav";
 import sound5 from "@/assets/audio/sound_6.wav";
+import sound80 from "@/assets/audio/sound_80.wav";
+import sound85 from "@/assets/audio/sound_85.wav";
+import sound90 from "@/assets/audio/sound_90.wav";
 
 const audioFiles = [sound0, sound1, sound2, sound3, sound4, sound5];
+
+// Override map for specific entries
+const audioOverrides: Record<number, string> = {
+  80: sound80,
+  85: sound85,
+  90: sound90,
+};
+
+const getAudioSrc = (entry: EntryType): string => {
+  return audioOverrides[entry.id] ?? audioFiles[entry.audioIndex];
+};
 
 const Index = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -21,7 +35,7 @@ const Index = () => {
     }
 
     const audio = audioRef.current;
-    const src = audioFiles[entry.audioIndex];
+    const src = getAudioSrc(entry);
 
     if (activeId === entry.id) {
       audio.pause();
@@ -38,22 +52,23 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-10 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 py-6 flex items-baseline justify-between">
-          <h1 className="text-xs font-mono tracking-[0.3em] uppercase text-muted-foreground">
-            Digital Archive
+        <div className="max-w-4xl mx-auto px-6 md:px-10 py-8">
+          <h1 className="text-lg md:text-xl font-light tracking-[0.2em] uppercase text-foreground mb-2">
+            Signal Archive
           </h1>
-          <span className="text-xs font-mono text-muted-foreground/40 tracking-widest">
-            {archiveEntries.length} entries
-          </span>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
+            A curated collection of captured transmissions, ambient field recordings, and spectral analyses from deep monitoring stations.
+          </p>
         </div>
       </header>
 
       {/* Entries */}
       <main className="max-w-4xl mx-auto">
-        {archiveEntries.map((entry) => (
+        {archiveEntries.map((entry, index) => (
           <ArchiveEntry
             key={entry.id}
             entry={entry}
+            index={index}
             isActive={activeId === entry.id}
             onClick={handlePlay}
           />
