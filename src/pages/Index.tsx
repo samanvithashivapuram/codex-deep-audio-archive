@@ -66,12 +66,14 @@ const Index = () => {
       <main className="max-w-4xl mx-auto">
         {archiveEntries.map((entry, index) => (
           <ArchiveEntry
-            key={entry.id}
-            entry={entry}
-            index={index}
-            isActive={activeId === entry.id}
-            onClick={handlePlay}
-          />
+  key={entry.id}
+  entry={entry}
+  index={index}
+  audioSrc={getAudioSrc(entry)}
+  isActive={activeId === entry.id}
+  onClick={handlePlay}
+/>
+
         ))}
       </main>
 

@@ -4,11 +4,24 @@ import type { ArchiveEntry as EntryType } from "@/data/archiveEntries";
 interface Props {
   entry: EntryType;
   index: number;
+  audioSrc: string;
   isActive: boolean;
   onClick: (entry: EntryType) => void;
 }
 
-const ArchiveEntry = memo(({ entry, index, isActive, onClick }: Props) => {
+
+const ArchiveEntry = memo(({ entry, index, audioSrc, isActive, onClick }: Props) => {
+  const handleDownload = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
+    const link = document.createElement("a");
+    link.href = audioSrc;
+    link.download = `signal_${entry.id}.wav`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <button
       onClick={() => onClick(entry)}
@@ -58,6 +71,9 @@ const ArchiveEntry = memo(({ entry, index, isActive, onClick }: Props) => {
               <span className="w-[3px] h-3 bg-primary rounded-full animate-pulse [animation-delay:150ms]" />
               <span className="w-[3px] h-4 bg-primary rounded-full animate-pulse [animation-delay:300ms]" />
             </div>
+            
+            
+      
           ) : (
             <svg
               width="16"
@@ -68,10 +84,20 @@ const ArchiveEntry = memo(({ entry, index, isActive, onClick }: Props) => {
             >
               <polygon points="6,4 20,12 6,20" />
             </svg>
-          )}
-        </div>
-      </div>
-    </button>
+)}
+
+<span
+  onClick={handleDownload}
+  className="ml-4 text-[10px] tracking-widest uppercase text-muted-foreground hover:text-foreground transition cursor-pointer"
+>
+  DL
+</span>
+
+
+</div>
+</div>
+</button>
+
   );
 });
 
