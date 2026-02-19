@@ -54,10 +54,10 @@ const Index = () => {
       <header className="sticky top-0 z-10 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="max-w-4xl mx-auto px-6 md:px-10 py-8">
           <h1 className="text-lg md:text-xl font-light tracking-[0.2em] uppercase text-foreground mb-2">
-            SIGNAL ARCHIVEE
+            CODEX AUDIO ARCHIVE
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
-            A curated collection of captured transmissions, ambient field recordings, and spectral analyses from deep monitoring stations.
+            DUCK
           </p>
         </div>
       </header>
