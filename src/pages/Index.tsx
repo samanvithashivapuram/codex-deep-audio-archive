@@ -8,9 +8,9 @@ import sound2 from "@/assets/audio/sound_3.wav";
 import sound3 from "@/assets/audio/sound_4.wav";
 import sound4 from "@/assets/audio/sound_5.wav";
 import sound5 from "@/assets/audio/sound_6.wav";
-import sound80 from "@/assets/audio/Steghide.wav";
-import sound85 from "@/assets/audio/Steghide.wav";
-import sound90 from "@/assets/audio/Steghide.wav";
+import sound80 from "@/assets/audio/steghide1/Steghide.wav";
+import sound85 from "@/assets/audio/steghide1/Steghide.wav";
+import sound90 from "@/assets/audio/steghide1/Steghide.wav";
 
 const audioFiles = [sound0, sound1, sound2, sound3, sound4, sound5];
 
