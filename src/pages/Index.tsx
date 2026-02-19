@@ -57,7 +57,7 @@ const Index = () => {
             CODEX AUDIO ARCHIVE
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
-            duck
+            Welcome to Stage 4 
           </p>
         </div>
       </header>
